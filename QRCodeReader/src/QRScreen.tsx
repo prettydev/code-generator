@@ -1,5 +1,5 @@
-import 'react-native-gesture-handler';
-import * as React from 'react';
+import "react-native-gesture-handler";
+import * as React from "react";
 import {
   ScrollView,
   View,
@@ -7,30 +7,21 @@ import {
   TouchableOpacity,
   Button,
   TextInput,
-} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Styles, Colors} from './Styles';
+} from "react-native";
+import { RNCamera } from "react-native-camera";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Styles, Colors } from "./Styles";
 
-function QRScreen({navigation, route}) {
-  const {name, phone} = route.params;
-  const qrvalue = `${name}:${phone}`;
-
-  console.log(qrvalue);
+function QRScreen({ navigation }) {
+  const onQrCodeRead = (e) => {
+    console.log("code:", e.data, "type:", e.type);
+    navigation.navigate("HomeScreen", { code: e.data, type: e.type });
+  };
 
   return (
-    <SafeAreaView style={Styles.container}>
-      <View style={Styles.qrHeader}></View>
-      <View style={Styles.qrArea}>
-        <Text style={Styles.qrLabel}>Your QR Code</Text>
-      </View>
-      <View style={Styles.footerArea}>
-        <TouchableOpacity
-          style={Styles.button}
-          onPress={() => navigation.navigate('HomeScreen')}>
-          <Text style={Styles.buttonText}>Back</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+    <View style={Styles.camContainer}>
+      <RNCamera style={Styles.camPreview} onBarCodeRead={onQrCodeRead} />
+    </View>
   );
 }
 

@@ -19,11 +19,6 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     width: '95%',
   },
-  qrHeader: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   icon: {
     color: Colors.gray,
     fontSize: 40,
@@ -31,29 +26,21 @@ export const Styles = StyleSheet.create({
   formArea: {
     width: '80%',
   },
-  qrArea: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   formElement: {
     paddingBottom: 60,
-  },
-  textInput: {
-    backgroundColor: Colors.white,
   },
   textTitle: {
     color: Colors.white,
     fontSize: 20,
   },
+  textField: {
+    color: Colors.white,
+    fontSize: 30,
+  },
   textLabel: {
     color: Colors.white,
     fontSize: 18,
     paddingBottom: 12,
-  },
-  qrLabel: {
-    color: Colors.white,
-    fontSize: 18,
-    paddingBottom: 30,
   },
   footerArea: {
     flexDirection: 'row',
@@ -70,5 +57,14 @@ export const Styles = StyleSheet.create({
   buttonText: {
     color: Colors.dark,
     fontSize: 16,
+  },
+  camContainer: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  camPreview: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
 });
