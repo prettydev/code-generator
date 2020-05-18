@@ -1,48 +1,60 @@
-import * as React from 'react';
-import StyleSheet from 'react-native';
-const Colors = {
-  lighter: '',
-  white: '',
-  black: '',
-  dark: '',
+import {StyleSheet} from 'react-native';
+export const Colors = {
+  primary: '#465f7e',
+  white: '#ffffff',
+  dark: '#000000',
+  gray: '#999',
 };
-const Styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+export const Styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: Colors.primary,
+    paddingBottom: 30,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '95%',
   },
-  body: {
+  icon: {
+    color: Colors.gray,
+    fontSize: 40,
+  },
+  formArea: {
+    width: '80%',
+  },
+  formElement: {
+    paddingBottom: 60,
+  },
+  textInput: {
     backgroundColor: Colors.white,
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  textTitle: {
+    color: Colors.white,
+    fontSize: 20,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
+  textLabel: {
+    color: Colors.white,
     fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
+    paddingBottom: 12,
   },
-  highlight: {
-    fontWeight: '700',
+  footerArea: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: '80%',
   },
-  footer: {
+  button: {
+    backgroundColor: Colors.white,
+    paddingLeft: 30,
+    paddingRight: 30,
+    paddingTop: 8,
+    paddingBottom: 8,
+  },
+  buttonText: {
     color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+    fontSize: 16,
   },
 });
-
-export default Styles;

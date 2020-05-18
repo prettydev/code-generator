@@ -1,26 +1,54 @@
-import "react-native-gesture-handler";
-import * as React from "react";
-import { View, Text, Button, TextInput } from "react-native";
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import {
+  ScrollView,
+  View,
+  Text,
+  TouchableOpacity,
+  Button,
+  TextInput,
+} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import EvilIconsIcon from 'react-native-vector-icons/EvilIcons';
 
-function HomeScreen({ navigation }) {
-  const [name, setName] = React.useState("");
-  const [phone, setPhone] = React.useState("");
+import {Styles, Colors} from './Styles';
+
+function HomeScreen({navigation}) {
+  const [name, setName] = React.useState('');
+  const [phone, setPhone] = React.useState('');
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#465F7E",
-      }}
-    >
-      <Text>Generator</Text>
-      <Text>Name</Text>
-      <TextInput onChangeText={(text) => setName(text)} value={name} />
-      <Text>Phone Number</Text>
-      <TextInput onChangeText={(text) => setPhone(text)} value={phone} />
-      <Button title="Done" onPress={() => navigation.navigate("QRScreen")} />
-    </View>
+    <SafeAreaView style={Styles.container}>
+      <View style={Styles.header}>
+        <EvilIconsIcon name="navicon" style={Styles.icon} />
+        <Text style={Styles.textTitle}>Generator</Text>
+        <Text></Text>
+      </View>
+      <View style={Styles.formArea}>
+        <View style={Styles.formElement}>
+          <Text style={Styles.textLabel}>Name</Text>
+          <TextInput
+            onChangeText={(text) => setName(text)}
+            value={name}
+            style={Styles.textInput}
+          />
+        </View>
+        <View style={Styles.formElement}>
+          <Text style={Styles.textLabel}>Phone Number</Text>
+          <TextInput
+            onChangeText={(text) => setPhone(text)}
+            value={phone}
+            style={Styles.textInput}
+          />
+        </View>
+      </View>
+      <View style={Styles.footerArea}>
+        <TouchableOpacity
+          style={Styles.button}
+          onPress={() => navigation.navigate('QRScreen')}>
+          <Text style={Styles.buttonText}>Done</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 }
 
