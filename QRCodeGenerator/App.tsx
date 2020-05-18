@@ -23,7 +23,11 @@ const App = () => {
             component={HomeScreen}
             options={{headerShown: false}}
           />
-          <Stack.Screen name="QRScreen" component={QRScreen} />
+          <Stack.Screen
+            name="QRScreen"
+            component={QRScreen}
+            options={{headerShown: false}}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

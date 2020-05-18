@@ -19,12 +19,21 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     width: '95%',
   },
+  qrHeader: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   icon: {
     color: Colors.gray,
     fontSize: 40,
   },
   formArea: {
     width: '80%',
+  },
+  qrArea: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   formElement: {
     paddingBottom: 60,
@@ -40,6 +49,11 @@ export const Styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 18,
     paddingBottom: 12,
+  },
+  qrLabel: {
+    color: Colors.white,
+    fontSize: 18,
+    paddingBottom: 30,
   },
   footerArea: {
     flexDirection: 'row',
