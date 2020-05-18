@@ -44,7 +44,12 @@ function HomeScreen({navigation}) {
       <View style={Styles.footerArea}>
         <TouchableOpacity
           style={Styles.button}
-          onPress={() => navigation.navigate('QRScreen')}>
+          onPress={() =>
+            navigation.navigate('QRScreen', {
+              name,
+              phone,
+            })
+          }>
           <Text style={Styles.buttonText}>Done</Text>
         </TouchableOpacity>
       </View>
