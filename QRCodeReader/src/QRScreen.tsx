@@ -1,16 +1,8 @@
 import "react-native-gesture-handler";
 import * as React from "react";
-import {
-  ScrollView,
-  View,
-  Text,
-  TouchableOpacity,
-  Button,
-  TextInput,
-} from "react-native";
+import { View } from "react-native";
 import { RNCamera } from "react-native-camera";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Styles, Colors } from "./Styles";
+import { Styles } from "./Styles";
 
 function QRScreen({ navigation }) {
   const onQrCodeRead = (e) => {

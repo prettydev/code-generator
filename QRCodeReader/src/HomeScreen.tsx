@@ -1,17 +1,14 @@
 import "react-native-gesture-handler";
 import * as React from "react";
 import {
-  ScrollView,
   View,
   Text,
   TouchableOpacity,
-  Button,
-  TextInput,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 
-import { Styles, Colors } from "./Styles";
+import { Styles } from "./Styles";
 
 function HomeScreen({ navigation, route }) {
   const { code, type } = route.params;

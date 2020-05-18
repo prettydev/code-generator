@@ -1,21 +1,19 @@
-import 'react-native-gesture-handler';
-import * as React from 'react';
+import "react-native-gesture-handler";
+import * as React from "react";
 import {
-  ScrollView,
   View,
   Text,
   TouchableOpacity,
-  Button,
   TextInput,
-} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import EvilIconsIcon from 'react-native-vector-icons/EvilIcons';
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 
-import {Styles, Colors} from './Styles';
+import { Styles } from "./Styles";
 
-function HomeScreen({navigation}) {
-  const [name, setName] = React.useState('');
-  const [phone, setPhone] = React.useState('');
+function HomeScreen({ navigation }) {
+  const [name, setName] = React.useState("");
+  const [phone, setPhone] = React.useState("");
   return (
     <SafeAreaView style={Styles.container}>
       <View style={Styles.header}>
@@ -45,11 +43,11 @@ function HomeScreen({navigation}) {
         <TouchableOpacity
           style={Styles.button}
           onPress={() =>
-            navigation.navigate('QRScreen', {
+            navigation.navigate("QRScreen", {
               name,
               phone,
-            })
-          }>
+            })}
+        >
           <Text style={Styles.buttonText}>Done</Text>
         </TouchableOpacity>
       </View>
