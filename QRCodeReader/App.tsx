@@ -19,6 +19,8 @@ import ResultScreen from './src/ResultScreen';
 import icon from './src/img/icon.png';
 import {Styles} from './src/Styles';
 
+import {StateProvider} from './src/Store';
+
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -57,17 +59,6 @@ function CustomDrawerContent(props) {
           );
         }}
       />
-      {
-        // <DrawerItemList {...props} />
-        // <DrawerItem
-        //   label="Close drawer"
-        //   onPress={() => props.navigation.closeDrawer()}
-        // />
-        // <DrawerItem
-        //   label="Toggle drawer"
-        //   onPress={() => props.navigation.toggleDrawer()}
-        // />
-      }
     </DrawerContentScrollView>
   );
 }
@@ -77,14 +68,16 @@ const App = () => {
     SplashScreen.hide();
   }, []);
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Drawer.Navigator
-          drawerContent={(props) => <CustomDrawerContent {...props} />}>
-          <Drawer.Screen name="Home" component={HomeStack} />
-        </Drawer.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <StateProvider>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Drawer.Navigator
+            drawerContent={(props) => <CustomDrawerContent {...props} />}>
+            <Drawer.Screen name="Home" component={HomeStack} />
+          </Drawer.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </StateProvider>
   );
 };
 

@@ -3,13 +3,18 @@ import * as React from 'react';
 import {View} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import BarcodeMask from 'react-native-barcode-mask';
-import {Styles, Colors} from './Styles';
+
 import Header from './Header';
 
+import {Styles, Colors} from './Styles';
+import {store} from './Store';
+
 function QRScreen({navigation}) {
+  const [state, dispatch] = React.useContext(store);
+
   const onQrCodeRead = (e) => {
-    console.log('code:', e.data, 'type:', e.type);
-    navigation.navigate('HomeScreen', {code: e.data, type: e.type});
+    dispatch({type: 'setLocation', payload: e.data});
+    navigation.navigate('ResultScreen');
   };
 
   return (

@@ -23,13 +23,14 @@ export const Styles = StyleSheet.create({
     color: Colors.gray,
     fontSize: 40,
   },
-  formArea: {
-    width: '80%',
-  },
   qrArea: {
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 50,
+  },
+
+  formArea: {
+    width: '80%',
   },
   formElement: {
     paddingBottom: 60,
@@ -46,6 +47,7 @@ export const Styles = StyleSheet.create({
     fontSize: 18,
     paddingBottom: 12,
   },
+
   qrLabel: {
     color: Colors.white,
     fontSize: 18,

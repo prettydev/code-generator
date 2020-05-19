@@ -32,6 +32,9 @@ export const Styles = StyleSheet.create({
   formElement: {
     paddingBottom: 60,
   },
+  textInput: {
+    backgroundColor: Colors.white,
+  },
   textTitle: {
     color: Colors.white,
     fontSize: 20,
@@ -40,10 +43,20 @@ export const Styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 30,
   },
+  subTextField: {
+    color: Colors.white,
+    fontSize: 25,
+  },
   textLabel: {
     color: Colors.white,
     fontSize: 18,
     paddingBottom: 12,
+  },
+  resultArea: {
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    height: '35%',
+    marginBottom: 50,
   },
   footerArea: {
     flexDirection: 'row',

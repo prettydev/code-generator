@@ -2,20 +2,31 @@ import 'react-native-gesture-handler';
 import * as React from 'react';
 import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Styles} from './Styles';
 import Header from './Header';
 
+import {Styles} from './Styles';
+import {store} from './Store';
+
 function HomeScreen({navigation}) {
-  const [name, setName] = React.useState('');
-  const [phone, setPhone] = React.useState('');
+  const [state, dispatch] = React.useContext(store);
+
+  const [userInput, setUserInput] = React.useReducer(
+    (state, newState) => ({...state, ...newState}),
+    {
+      name: '',
+      phone: '',
+    },
+  );
 
   const phoneRef = React.useRef(null);
 
-  const goQRScreen = (_) =>
+  const goQRScreen = (_) => {
+    dispatch({type: 'setUser', payload: userInput});
     navigation.navigate('QRScreen', {
-      name,
-      phone,
+      name: userInput.name,
+      phone: userInput.phone,
     });
+  };
 
   return (
     <SafeAreaView style={Styles.container}>
@@ -24,9 +35,9 @@ function HomeScreen({navigation}) {
         <View style={Styles.formElement}>
           <Text style={Styles.textLabel}>Name</Text>
           <TextInput
-            value={name}
             style={Styles.textInput}
-            onChangeText={(text) => setName(text)}
+            value={userInput.name}
+            onChangeText={(value) => setUserInput({['name']: value})}
             onSubmitEditing={(e) => {
               e.preventDefault();
               phoneRef.current.focus();
@@ -37,16 +48,16 @@ function HomeScreen({navigation}) {
           <Text style={Styles.textLabel}>Phone Number</Text>
           <TextInput
             ref={phoneRef}
-            value={phone}
             style={Styles.textInput}
-            onChangeText={(text) => setPhone(text)}
+            value={userInput.phone}
+            onChangeText={(value) => setUserInput({['phone']: value})}
             onSubmitEditing={goQRScreen}
           />
         </View>
       </View>
       <View style={Styles.footerArea}>
         <TouchableOpacity style={Styles.button} onPress={goQRScreen}>
-          <Text style={Styles.buttonText}>Done</Text>
+          <Text style={Styles.buttonText}>Next</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
