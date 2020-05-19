@@ -1,3 +1,8 @@
+## design
+
+https://docs.google.com/presentation/d/1Y0qOJXM3qYVGpUbV2PYkKySF1E5QwL68GLBa-Y6Hf3I/edit#slide=id.g7839c82170_0_3
+https://docs.google.com/presentation/d/11CXe9hvJDUfBY0RRq5HaTw_q9Qy92HJMokI07ZJ64DU/edit#slide=id.g7839c821c2_0_6
+
 ## tech stacks
 
     -   react-native    :   0.62.2
