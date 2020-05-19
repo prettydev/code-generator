@@ -20,6 +20,7 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '95%',
+    backgroundColor: Colors.primary,
   },
   icon: {
     color: Colors.gray,
@@ -62,11 +63,30 @@ export const Styles = StyleSheet.create({
   },
   camContainer: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
+    backgroundColor: Colors.primary,
   },
   camPreview: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
   },
+  /** drawer styles */
+  drawer: {
+    backgroundColor: Colors.primary,
+  },
+  drawerIcon: {
+    width: 33,
+    height: 33,
+  },
+  drawerHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  drawerText: {
+    color: Colors.white,
+    fontSize: 22,
+    marginLeft: 12,
+  },
+  //////////////////////////////////
 });

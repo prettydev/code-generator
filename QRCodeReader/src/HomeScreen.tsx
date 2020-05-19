@@ -1,20 +1,16 @@
-import "react-native-gesture-handler";
-import * as React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import {View, Text, TouchableOpacity} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
-import { Styles } from "./Styles";
+import {Styles} from './Styles';
+import Header from './Header';
 
-function HomeScreen({ navigation, route }) {
-  const { code, type } = route.params;
-  let code_arr = code.split(":");
-  let name = "";
-  let phone = "";
+function HomeScreen({navigation, route}) {
+  const {code, type} = route.params;
+  let code_arr = code.split(':');
+  let name = '';
+  let phone = '';
 
   if (code_arr.length === 2) {
     name = code_arr[0];
@@ -23,15 +19,7 @@ function HomeScreen({ navigation, route }) {
 
   return (
     <SafeAreaView style={Styles.container}>
-      <View style={Styles.header}>
-        <View flex={1}>
-          <EvilIconsIcon name="navicon" style={Styles.icon} />
-        </View>
-        <View>
-          <Text style={Styles.textTitle}>Reader</Text>
-        </View>
-        <View flex={1}></View>
-      </View>
+      <Header title={'Reader'} navigation={navigation} />
       <View style={Styles.formArea}>
         <View style={Styles.formElement}>
           <Text style={Styles.textLabel}>Name</Text>
@@ -46,11 +34,11 @@ function HomeScreen({ navigation, route }) {
         <TouchableOpacity
           style={Styles.button}
           onPress={() =>
-            navigation.navigate("QRScreen", {
+            navigation.navigate('QRScreen', {
               name,
               phone,
-            })}
-        >
+            })
+          }>
           <Text style={Styles.buttonText}>Done</Text>
         </TouchableOpacity>
       </View>

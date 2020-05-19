@@ -4,6 +4,7 @@ import {View} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import BarcodeMask from 'react-native-barcode-mask';
 import {Styles, Colors} from './Styles';
+import Header from './Header';
 
 function QRScreen({navigation}) {
   const onQrCodeRead = (e) => {
@@ -13,6 +14,7 @@ function QRScreen({navigation}) {
 
   return (
     <View style={Styles.camContainer}>
+      <Header title={'Reader'} navigation={navigation} />
       <RNCamera style={Styles.camPreview} onBarCodeRead={onQrCodeRead}>
         <BarcodeMask edgeColor={Colors.edge} animatedLineColor={Colors.hline} />
       </RNCamera>
