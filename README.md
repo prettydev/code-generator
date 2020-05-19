@@ -3,6 +3,10 @@
 https://docs.google.com/presentation/d/1Y0qOJXM3qYVGpUbV2PYkKySF1E5QwL68GLBa-Y6Hf3I/edit#slide=id.g7839c82170_0_3
 https://docs.google.com/presentation/d/11CXe9hvJDUfBY0RRq5HaTw_q9Qy92HJMokI07ZJ64DU/edit#slide=id.g7839c821c2_0_6
 
+https://docs.google.com/presentation/d/16zmwg-vsta9yfYOXnipew8D3u52iYND-8DzpnR_yIlY/edit#slide=id.g7839c82170_0_3
+https://docs.google.com/presentation/d/1GFEohVlCe10WdkMnexdkURs-zeBoNHXxdXiBgJk_TUs/edit#slide=id.g86f6cf045d_0_51
+https://docs.google.com/presentation/d/18Da2HzYY0kSHQ71sH14fG_7O9vEF1AU6YwI4RWj4Uh4/edit#slide=id.g86f4df936e_0_0
+
 ## tech stacks
 
     -   react-native    :   0.62.2

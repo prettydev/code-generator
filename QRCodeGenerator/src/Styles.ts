@@ -67,4 +67,23 @@ export const Styles = StyleSheet.create({
     color: Colors.dark,
     fontSize: 16,
   },
+
+  /** drawer styles */
+  drawer: {
+    backgroundColor: Colors.primary,
+  },
+  drawerIcon: {
+    width: 33,
+    height: 33,
+  },
+  drawerHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  drawerText: {
+    color: Colors.white,
+    fontSize: 22,
+    marginLeft: 12,
+  },
+  //////////////////////////////////
 });
