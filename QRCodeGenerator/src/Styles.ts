@@ -79,6 +79,8 @@ export const Styles = StyleSheet.create({
     height: 33,
   },
   drawerHeader: {
+    marginTop: 10,
+    marginLeft: 15,
     flexDirection: 'row',
     alignItems: 'center',
   },
