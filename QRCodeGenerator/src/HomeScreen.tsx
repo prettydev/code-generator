@@ -8,8 +8,8 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
-
 import { Styles } from "./Styles";
+import Header from "./Header";
 
 function HomeScreen({ navigation }) {
   const [name, setName] = React.useState("");
@@ -25,15 +25,7 @@ function HomeScreen({ navigation }) {
 
   return (
     <SafeAreaView style={Styles.container}>
-      <View style={Styles.header}>
-        <View flex={1}>
-          <EvilIconsIcon name="navicon" style={Styles.icon} />
-        </View>
-        <View>
-          <Text style={Styles.textTitle}>Generator</Text>
-        </View>
-        <View flex={1}></View>
-      </View>
+      <Header title={"Generator"} />
       <View style={Styles.formArea}>
         <View style={Styles.formElement}>
           <Text style={Styles.textLabel}>Name</Text>
@@ -41,7 +33,10 @@ function HomeScreen({ navigation }) {
             value={name}
             style={Styles.textInput}
             onChangeText={(text) => setName(text)}
-            onSubmitEditing={(e) => phoneRef.current.focus()}
+            onSubmitEditing={(e) => {
+              e.preventDefault();
+              phoneRef.current.focus();
+            }}
           />
         </View>
         <View style={Styles.formElement}>

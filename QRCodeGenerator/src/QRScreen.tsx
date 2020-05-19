@@ -8,6 +8,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import QRCode from "react-native-qrcode-svg";
 import { Styles } from "./Styles";
+import Header from "./Header";
 
 function QRScreen({ navigation, route }) {
   const { name, phone } = route.params;
@@ -17,6 +18,7 @@ function QRScreen({ navigation, route }) {
 
   return (
     <SafeAreaView style={Styles.container}>
+      <Header title={"Generator"} />
       <View style={Styles.qrHeader}></View>
       <View style={Styles.qrArea}>
         <Text style={Styles.qrLabel}>Your QR Code</Text>
