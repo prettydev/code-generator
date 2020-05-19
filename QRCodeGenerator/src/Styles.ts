@@ -29,6 +29,7 @@ export const Styles = StyleSheet.create({
   qrArea: {
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: 50,
   },
   formElement: {
     paddingBottom: 60,
