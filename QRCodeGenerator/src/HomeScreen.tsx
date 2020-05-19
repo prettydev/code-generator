@@ -14,6 +14,15 @@ import { Styles } from "./Styles";
 function HomeScreen({ navigation }) {
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
+
+  const phoneRef = React.useRef(null);
+
+  const goQRScreen = (_) =>
+    navigation.navigate("QRScreen", {
+      name,
+      phone,
+    });
+
   return (
     <SafeAreaView style={Styles.container}>
       <View style={Styles.header}>
@@ -29,28 +38,27 @@ function HomeScreen({ navigation }) {
         <View style={Styles.formElement}>
           <Text style={Styles.textLabel}>Name</Text>
           <TextInput
-            onChangeText={(text) => setName(text)}
             value={name}
             style={Styles.textInput}
+            onChangeText={(text) => setName(text)}
+            onSubmitEditing={(e) => phoneRef.current.focus()}
           />
         </View>
         <View style={Styles.formElement}>
           <Text style={Styles.textLabel}>Phone Number</Text>
           <TextInput
-            onChangeText={(text) => setPhone(text)}
+            ref={phoneRef}
             value={phone}
             style={Styles.textInput}
+            onChangeText={(text) => setPhone(text)}
+            onSubmitEditing={goQRScreen}
           />
         </View>
       </View>
       <View style={Styles.footerArea}>
         <TouchableOpacity
           style={Styles.button}
-          onPress={() =>
-            navigation.navigate("QRScreen", {
-              name,
-              phone,
-            })}
+          onPress={goQRScreen}
         >
           <Text style={Styles.buttonText}>Done</Text>
         </TouchableOpacity>
