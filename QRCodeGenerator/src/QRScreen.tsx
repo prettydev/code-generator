@@ -19,7 +19,6 @@ function QRScreen({ navigation, route }) {
   return (
     <SafeAreaView style={Styles.container}>
       <Header title={"Generator"} />
-      <View style={Styles.qrHeader}></View>
       <View style={Styles.qrArea}>
         <Text style={Styles.qrLabel}>Your QR Code</Text>
         <QRCode value={qrvalue} size={250} />

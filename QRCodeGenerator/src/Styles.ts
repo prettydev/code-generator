@@ -19,11 +19,6 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     width: '95%',
   },
-  qrHeader: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   icon: {
     color: Colors.gray,
     fontSize: 40,
