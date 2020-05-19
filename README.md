@@ -6,6 +6,10 @@
     -   react-navigation    :   5.x
     -   react-native-splash-screen
 
-## add splash screen
+## add splash screen guide
 
 https://www.netguru.com/codestories/how-to-add-a-splash-screen-to-a-react-native-application
+
+## react-native-camera tutorial
+
+https://www.toptal.com/react-native/react-native-camera-tutorial

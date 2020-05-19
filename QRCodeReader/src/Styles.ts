@@ -4,6 +4,8 @@ export const Colors = {
   white: '#ffffff',
   dark: '#000000',
   gray: '#999',
+  edge: '#a1d34c',
+  hline: '#bb716d',
 };
 export const Styles = StyleSheet.create({
   container: {
