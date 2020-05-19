@@ -17,9 +17,13 @@ function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={Styles.container}>
       <View style={Styles.header}>
-        <EvilIconsIcon name="navicon" style={Styles.icon} />
-        <Text style={Styles.textTitle}>Generator</Text>
-        <Text></Text>
+        <View>
+          <EvilIconsIcon name="navicon" style={Styles.icon} />
+        </View>
+        <View>
+          <Text style={Styles.textTitle}>Generator</Text>
+        </View>
+        <View><EvilIconsIcon name="" style={Styles.icon} /></View>
       </View>
       <View style={Styles.formArea}>
         <View style={Styles.formElement}>
