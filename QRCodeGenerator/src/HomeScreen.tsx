@@ -1,31 +1,26 @@
-import "react-native-gesture-handler";
-import * as React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
-import { Styles } from "./Styles";
-import Header from "./Header";
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import {View, Text, TouchableOpacity, TextInput} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import EvilIconsIcon from 'react-native-vector-icons/EvilIcons';
+import {Styles} from './Styles';
+import Header from './Header';
 
-function HomeScreen({ navigation }) {
-  const [name, setName] = React.useState("");
-  const [phone, setPhone] = React.useState("");
+function HomeScreen({navigation}) {
+  const [name, setName] = React.useState('');
+  const [phone, setPhone] = React.useState('');
 
   const phoneRef = React.useRef(null);
 
   const goQRScreen = (_) =>
-    navigation.navigate("QRScreen", {
+    navigation.navigate('QRScreen', {
       name,
       phone,
     });
 
   return (
     <SafeAreaView style={Styles.container}>
-      <Header title={"Generator"} />
+      <Header title={'Generator'} navigation={navigation} />
       <View style={Styles.formArea}>
         <View style={Styles.formElement}>
           <Text style={Styles.textLabel}>Name</Text>
@@ -51,10 +46,7 @@ function HomeScreen({ navigation }) {
         </View>
       </View>
       <View style={Styles.footerArea}>
-        <TouchableOpacity
-          style={Styles.button}
-          onPress={goQRScreen}
-        >
+        <TouchableOpacity style={Styles.button} onPress={goQRScreen}>
           <Text style={Styles.buttonText}>Done</Text>
         </TouchableOpacity>
       </View>
