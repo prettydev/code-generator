@@ -14,6 +14,7 @@ import SplashScreen from 'react-native-splash-screen';
 
 import HomeScreen from './src/HomeScreen';
 import QRScreen from './src/QRScreen';
+import ResultScreen from './src/ResultScreen';
 
 import icon from './src/img/icon.png';
 import {Styles} from './src/Styles';
@@ -23,7 +24,7 @@ const Drawer = createDrawerNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator initialRouteName="QRScreen">
+    <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
@@ -32,6 +33,11 @@ const HomeStack = () => {
       <Stack.Screen
         name="QRScreen"
         component={QRScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ResultScreen"
+        component={ResultScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -1,21 +1,21 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-
 import {Styles} from './Styles';
 import Header from './Header';
 
-function HomeScreen({navigation, route}) {
-  const {code, type} = route.params;
-  let code_arr = code.split(':');
-  let name = '';
-  let phone = '';
+function HomeScreen({navigation}) {
+  const [name, setName] = React.useState('');
+  const [phone, setPhone] = React.useState('');
 
-  if (code_arr.length === 2) {
-    name = code_arr[0];
-    phone = code_arr[1];
-  }
+  const phoneRef = React.useRef(null);
+
+  const goQRScreen = (_) =>
+    navigation.navigate('QRScreen', {
+      name,
+      phone,
+    });
 
   return (
     <SafeAreaView style={Styles.container}>
@@ -23,22 +23,29 @@ function HomeScreen({navigation, route}) {
       <View style={Styles.formArea}>
         <View style={Styles.formElement}>
           <Text style={Styles.textLabel}>Name</Text>
-          <Text style={Styles.textField}>{name}</Text>
+          <TextInput
+            value={name}
+            style={Styles.textInput}
+            onChangeText={(text) => setName(text)}
+            onSubmitEditing={(e) => {
+              e.preventDefault();
+              phoneRef.current.focus();
+            }}
+          />
         </View>
         <View style={Styles.formElement}>
           <Text style={Styles.textLabel}>Phone Number</Text>
-          <Text style={Styles.textField}>{phone}</Text>
+          <TextInput
+            ref={phoneRef}
+            value={phone}
+            style={Styles.textInput}
+            onChangeText={(text) => setPhone(text)}
+            onSubmitEditing={goQRScreen}
+          />
         </View>
       </View>
       <View style={Styles.footerArea}>
-        <TouchableOpacity
-          style={Styles.button}
-          onPress={() =>
-            navigation.navigate('QRScreen', {
-              name,
-              phone,
-            })
-          }>
+        <TouchableOpacity style={Styles.button} onPress={goQRScreen}>
           <Text style={Styles.buttonText}>Done</Text>
         </TouchableOpacity>
       </View>
