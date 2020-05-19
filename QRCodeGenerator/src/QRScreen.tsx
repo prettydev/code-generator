@@ -7,17 +7,14 @@ import {Styles} from './Styles';
 import Header from './Header';
 
 function QRScreen({navigation, route}) {
-  const {name, phone} = route.params;
-  const qrvalue = `${name}:${phone}`;
-
-  console.log(qrvalue);
+  const {location} = route.params;
 
   return (
     <SafeAreaView style={Styles.container}>
       <Header title={'Generator'} navigation={navigation} />
       <View style={Styles.qrArea}>
         <Text style={Styles.qrLabel}>Your QR Code</Text>
-        <QRCode value={qrvalue} size={250} />
+        <QRCode value={location} size={250} />
       </View>
       <View style={Styles.footerArea}>
         <TouchableOpacity

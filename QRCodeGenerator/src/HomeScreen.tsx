@@ -6,40 +6,28 @@ import {Styles} from './Styles';
 import Header from './Header';
 
 function HomeScreen({navigation}) {
-  const [name, setName] = React.useState('');
-  const [phone, setPhone] = React.useState('');
+  const [location, setLocation] = React.useState('');
 
-  const phoneRef = React.useRef(null);
-
-  const goQRScreen = (_) =>
+  const goQRScreen = (_) => {
+    if (!location || location.length === 0) {
+      alert('Input the location!');
+      return;
+    }
     navigation.navigate('QRScreen', {
-      name,
-      phone,
+      location,
     });
+  };
 
   return (
     <SafeAreaView style={Styles.container}>
       <Header title={'Generator'} navigation={navigation} />
       <View style={Styles.formArea}>
         <View style={Styles.formElement}>
-          <Text style={Styles.textLabel}>Name</Text>
+          <Text style={Styles.textLabel}>Location</Text>
           <TextInput
-            value={name}
+            value={location}
             style={Styles.textInput}
-            onChangeText={(text) => setName(text)}
-            onSubmitEditing={(e) => {
-              e.preventDefault();
-              phoneRef.current.focus();
-            }}
-          />
-        </View>
-        <View style={Styles.formElement}>
-          <Text style={Styles.textLabel}>Phone Number</Text>
-          <TextInput
-            ref={phoneRef}
-            value={phone}
-            style={Styles.textInput}
-            onChangeText={(text) => setPhone(text)}
+            onChangeText={(text) => setLocation(text)}
             onSubmitEditing={goQRScreen}
           />
         </View>
