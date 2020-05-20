@@ -17,10 +17,6 @@ export const Styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '95%',
-    backgroundColor: Colors.primary,
   },
   icon: {
     color: Colors.gray,
@@ -76,8 +72,9 @@ export const Styles = StyleSheet.create({
   },
   camContainer: {
     flex: 1,
-    flexDirection: 'column',
+    // flexDirection: 'column',
     backgroundColor: Colors.primary,
+    justifyContent: 'space-between',
   },
   camPreview: {
     flex: 1,
